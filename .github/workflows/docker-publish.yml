@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Explicitly use ubuntu-22.04
     
     steps:
       # Checkout the repository
@@ -32,7 +32,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64 # Specify the platform
+          platforms: linux/amd64
           tags: |
             tylerstraub/node-base-image:latest
             tylerstraub/node-base-image:${{ github.sha }}
